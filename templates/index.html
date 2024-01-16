@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File upload app</title>
+
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <style>
+        body {
+            background-color: #000000; /* Black background color */
+            font-family: 'Arial', sans-serif; /* Change the font family */
+            color: #ffffff; /* White text color */
+            position: relative;
+            min-height: 100vh; /* Ensure the body takes at least the full height of the viewport */
+        }
+
+        h1 {
+            text-align: center;
+            color: #007bff; /* Blue color for the header */
+            margin-top: 50px;
+        }
+
+        form {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        input[type="file"] {
+            background-color: #111111; /* Dark gray background for the file input */
+            color: #ffffff; /* White text color for the file input */
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        input[type="submit"] {
+            background-color: #28a745; /* Green color for the submit button */
+            color: #ffffff; /* White text color for the button */
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #218838; /* Darker green color on hover */
+        }
+
+        .below-upload {
+            text-align: center;
+            color: #ffffff;
+            margin-top: 10px; /* Space between upload button and text */
+            font-size: 14px; /* Reduced font size */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Upload your message file</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <br>
+        <input type="submit" value="Upload">
+    </form>
+
+    <div class="below-upload">Created with love by Amol and Aakash ❤️</div>
+
+    <!-- Include Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messenger</title>
+
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <style>
+        body {
+            background-color: #000000; /* Black background color */
+            font-family: 'Arial', sans-serif; /* Change the font family */
+            color: #ffffff; /* White text color */
+        }
+
+        .container {
+            margin-top: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #007bff; /* Blue color for the header */
+        }
+
+        pre {
+            background-color: #111111; /* Dark gray background for messages */
+            padding: 20px;
+            border-radius: 10px;
+            overflow: auto;
+            font-size: 16px; /* Change the font size */
+        }
+
+        .btn-primary {
+            display: block;
+            margin: 0 auto;
+            background-color: #28a745; /* Green color for the button */
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #218838; /* Darker green color on hover */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Messenger</h1>
+
+        <pre>
+            <h3 style="color: #17a2b8;">{{content["Not spam"]|length}} New messages</h3>
+            {% for line in content["Not spam"] %}
+            <span style="color: #28a745;">{{ line }}</span>
+            {%endfor%}
+
+            <h3 style="color: #dc3545;">Spam Messages</h3>
+            {% for line in content["Spam"] %}
+            <span style="color: #dc3545;">{{ line }}</span>
+            {%endfor%}
+        </pre>
+
+        <a class="btn btn-primary mt-4" href="{{ url_for('index') }}" style="color: #fff;">Try Again</a>
+    </div>
+
+    <!-- Include Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
